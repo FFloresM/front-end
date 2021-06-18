@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function saludo(){
+            var mensaje;
+            mensaje = "buenos días";
+            alert(mensaje + " a todos!!");
+        }
+        saludo();
+        var variable = "Pedro";
+        switch (variable) {
+            case 'Rolando':
+                console.log("Su nombre es rolando")
+                break;
+            case 'José':
+                console.log("Su nombre es José")
+                break;
+            case 'Pedro':
+                console.log("Su nombre es Pedro")
+                break;
+            default:
+                console.log("no se encuentra su nombre")
+                break;
+        }
+
+        function sumar(valor1, valor2, valor3){
+            return valor1+valor2+valor3;
+        }
+        var resultado = sumar(10,20,30);
+        document.write(resultado+" resultado <br>"+resultado);
+
+        function b(c,d){
+            for (let i = 0; i < c; i++) {
+                document.write(i+"<br>");
+            }
+            return c*d;
+        }
+        let e = b(0,10);
+        document.write(e);
+
+        function f1(){
+            for (let i = 0; i < 10; i++) {
+                for (let j = 0; j < 10; j++) {
+                    document.write(j);
+                }
+                document.write(i+"<br>");
+            }
+        }
+        f1();
+
+        //arreglos
+        var lista = ["Diego", "María", "Juan", "Marcela"];
+        document.write("<br> mi nombre es "+lista[0]);
+        for(let i=0; i<4; i++){
+            document.write("<br>"+lista[i]);
+        }
+
+        //ingresando datos por pantalla
+        var edad = prompt("ingrese su edad");
+        document.write("La edad ingresada es: "+edad);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

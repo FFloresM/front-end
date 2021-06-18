@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center><!--Centrar los contenidos del body-->
+        <h1>Veterinaria</h1>
+        <hr>
+        <br>
+        <!--Definiendo los elementos del formulario-->
+        <form action="index.html" method="GET">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Nombre:</td>
+                        <td><input type="text" id="nombre" placeholder="ingrese nombre"></td>
+                    </tr>
+                    <tr>
+                        <td>Tipo de mascota: </td>
+                        <td>
+                            <select id="tipo">
+                                <option value="">Seleccione</option>
+                                <option value="">Gato</option>
+                                <option value="">Perro</option>
+                                <option value="">Conejo</option>
+                                <option value="">Hamster</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Frcha de nacimiento: </td>
+                        <td><input type="date" id="nacimiento"></td>
+                    </tr>
+                    <tr>
+                        <td>Tipo cliente: </td>
+                        <td>
+                            <input type="radio" name="grupo1" value="1"/> Normal
+                            <input type="radio" name="grupo1" value="2"/> VIP
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Servicios Prestados: </td>
+                        <td>
+                            <input type="checkbox" id="vacuna" value="1"/> Vacuna
+                            <input type="checkbox" id="peluqueria" value="2"/> Peluqueria
+                            <input type="checkbox" id="consulta" value="3"/> Consulta Médica
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Cuotas: </td>
+                        <td>
+                            <select id="cuotas">
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                                <option value="">5</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="reset" value="limpiar">
+                            <input type="submit" value="Continuar">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </center>
+</body>
+</html>
