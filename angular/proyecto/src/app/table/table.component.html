@@ -1,0 +1,17 @@
+<div>
+    <h2>Listas en una tabla</h2>
+    <hr><br>
+    <table border="1">
+        <tr>
+            <td>Sueldos</td>
+            <td>Notas</td>
+            <td>Actividad</td>
+        </tr>
+        <tr *ngFor="let sueldo of sueldos; let i=index">
+            <td>{{sueldo}}</td>
+            <td>{{notas[i]}}</td>
+            <td>{{actividad[i]}}</td>
+        </tr>
+        
+    </table>
+</div>

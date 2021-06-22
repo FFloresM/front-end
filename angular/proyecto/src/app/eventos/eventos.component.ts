@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-eventos',
   templateUrl: './eventos.component.html',
   styleUrls: ['./eventos.component.css']
 })
-export class EventosComponent implements OnInit {
+export class EventosComponent {
 
-  constructor() { }
+  i = 1;
 
-  ngOnInit(): void {
+  aumentar(){
+    this.i++;
+  }
+
+  disminuir(){
+    this.i--;
   }
 
 }
