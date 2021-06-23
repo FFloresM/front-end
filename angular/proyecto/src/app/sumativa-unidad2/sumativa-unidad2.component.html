@@ -1,0 +1,91 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h3>Agregar producto</h3>
+            <form [formGroup]="formularioProducto" (ngSubmit)="agregarProducto()">
+                <p>
+                    <input class="form-control" type="text" formControlName="codigo" placeholder="Ingrese codigo">
+                </p>
+                <p>
+                    <input class="form-control" type="text" formControlName="nombre" placeholder="Ingrese nombre">
+                </p>
+                <p>
+                    <input class="form-control" type="number" formControlName="precio" placeholder="Ingrese precio">
+                </p>
+                <p>
+                    <input class="form-control" type="text" formControlName="descripcion"
+                        placeholder="Ingrese descripción">
+                </p>
+                <p>
+                    <input class="form-control" type="number" formControlName="stock" placeholder="Ingrese stock">
+                </p>
+
+                <div>
+                    <button class="btn btn-primary" [disabled]="!formularioProducto.valid" type="submit">Guardar</button>
+                    <button class="btn btn-warning" type="reset">Limpiar</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-8">
+            <h3>Lista de productos disponibles</h3>
+            <table class="table table-striped table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Codigo</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">Stock</th>
+                        <th scope="col">Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let producto of productos">
+                        <td scope="row">{{producto.codigo}}</td>
+                        <td scope="row">{{producto.nombre}}</td>
+                        <td scope="row">{{producto.precio}}</td>
+                        <td scope="row">{{producto.descripcion}}</td>
+                        <td scope="row">{{producto.stock}}</td>
+                        <td scope="row">
+                            <button class="btn btn-warning" (click)="editar(producto)">actualizar</button>
+                            <button class="btn btn-danger" (click)="eliminar(producto)">eliminar</button>
+                            <button class="btn btn-primary" (click)="agregarOrdenCompra(producto); calcularTotal()">Agregar</button>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
+<hr>
+
+<h3>Orden de compra</h3>
+<table *ngIf="ordenCompra.length" class="table table-striped table-hover table-bordered">
+    <thead>
+        <tr>
+            
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let producto of ordenCompra">
+            <td scope="row">{{producto.nombre}}</td>
+            <td scope="row">{{producto.descripcion}}</td>
+            <td scope="row">{{producto.cantidad}}</td>
+            <td scope="row">{{producto.precio}}</td>
+            <td scope="row">{{producto.precio*producto.cantidad}}</td>
+        </tr>
+
+    </tbody>
+
+</table>
+<hr>
+<h1>Neto {{total}}</h1>
+<h1>IVA {{total*0.19}}</h1>
+<h1>Total {{total*1.19}}</h1>

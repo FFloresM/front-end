@@ -1,0 +1,37 @@
+<h1>Cálculo de promedio</h1>
+<br><hr>
+<div  class="container col-3">
+    <form  [formGroup]="formulario" (ngSubmit)="enviar()">
+        <p> 
+            <input class="form-control" type="text" formControlName="rut" placeholder="Ingrese rut">
+        </p>
+        <p> 
+            <input class="form-control" type="text" formControlName="nombre" placeholder="Ingrese nombre">
+        </p>
+        <div formGroupName="notas">
+            <p> 
+                <input class="form-control" type="number" formControlName="nota1" placeholder="Ingrese nota 1">
+            </p>
+            <p>
+                <input class="form-control" type="number" formControlName="nota2" placeholder="Ingrese nota 2">
+            </p>
+            <p> 
+                <input class="form-control" type="number" formControlName="nota3" placeholder="Ingrese nota 3">
+            </p>
+            <p> 
+                <input class="form-control" type="number" formControlName="nota4" placeholder="Ingrese nota examen">
+            </p>
+        </div>
+        <p>
+            <button class="btn btn-primary form-control" type="submit">Enviar</button>
+        </p>
+    </form>
+</div>
+<hr>
+        <div>
+            <p>Nota 1: {{nota1}}</p>
+            <p>Nota 2: {{nota2}}</p>
+            <p>Nota 3: {{nota3}}</p>
+            <p>Nota 4: {{nota4}}</p>
+            <p>{{salida}}</p>
+        </div>
